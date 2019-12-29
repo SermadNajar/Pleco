@@ -22,3 +22,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
 Route::resource('admin/posts', 'AdminPostsController'); // admin posts route
+

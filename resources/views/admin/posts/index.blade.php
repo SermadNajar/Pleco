@@ -15,7 +15,7 @@
                     <th>Owner</th>
                     <th>Category</th>
                     <th>Title</th>
-                    <th>body</th>
+                    <th>Description</th>
                     <th>Budget</th>
                     <th>Created</th>
                     <th>Updated</th>
@@ -27,10 +27,10 @@
                 <tr>
                     <td>{{$post->id}}</td>
                     <td><img height="50" src="{{$post->photo ? $post->photo->file : 'Https://pleco.io/Pleconew.png' }}" alt=""></td>
-                    <td>{{$post->user->name}}</td>
+                    <td><a href="{{route('posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
                     <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
-                    <td>{{$post->title}}</td>
-                    <td>{{$post->body}}</td>
+                    <td>{!! Str::limit($post->title, 10) !!}</td>
+                    <td>{!! Str::limit($post->body, 7) !!}</td>
                     <td>{{$post->price}}</td>
                     <td>{{$post->created_at->diffForhumans()}}</td>
                     <td>{{$post->updated_at->diffForhumans()}}</td>
@@ -40,11 +40,10 @@
             </tbody>
         </table>
     </div>
+</div>
 
-
-    <div class="col-lg-12">
-        <a href="{{ route('posts.create') }}" class="btn btn-primary rounded">Create Post</a>
-    </div>
+<div class="col-lg-12">
+    <a href="{{ route('posts.create') }}" class="btn btn-primary rounded">Create Post</a>
 </div>
 
 @endsection
