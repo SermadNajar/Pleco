@@ -3,7 +3,7 @@
 <div class="content">
     <div class="row">
         <div class="col-lg-12">
-            <h1>Browse Posts</h1>
+            <h1>Browse Leads</h1>
         </div>
 
         <div class="table-responsive">

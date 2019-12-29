@@ -22,6 +22,8 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->integer('price')->unsigned();
             $table->timestamps();
+            // Here we make sure that when a user is deleted, then the posts are also deleted
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

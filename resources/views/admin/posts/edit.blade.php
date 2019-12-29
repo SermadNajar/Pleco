@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <h1>Edit Post</h1>
         
+
         {!!Form::model($post, ['method'=>'PATCH', 'action'=> ['AdminPostsController@update', $post->id], 'files'=>true])!!}
 
             <div class="form-group">
@@ -32,6 +33,10 @@
                 {!!Form::label('photo_id', 'Photo:')!!}
                 {!!Form::file('photo_id', null, ['class'=>'form-control'])!!}
             </div>
+
+            <div class="col-sm-6">
+                <img width="50%" src="{{$post->photo->file}}" alt="" class="img-responsive">
+            </div>
                 
             <div class="form-group">
                 {!!Form::submit('Update Post', ['class'=>'btn btn-primary'])!!}
@@ -40,7 +45,14 @@
             {!!Form::close()!!}
 
 
-    <div class="row">
+
+            {!!Form::open(['method'=>'DELETE', 'action'=> ['AdminPostsController@destroy', $post->id]])!!}
+            <div class="form-group">
+                {!!Form::submit('Delete Post', ['class'=>'btn btn-danger'])!!}
+            </div>
+            {!!Form::close()!!}
+
+
             @include('partials.form_error')
     </div>
             
