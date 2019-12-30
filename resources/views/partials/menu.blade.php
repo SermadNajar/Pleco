@@ -2,9 +2,7 @@
 <div class="sidebar" data-color="orange" data-background-color="white">
     <!-- Brand Logo -->
     <div class="logo">
-        <a href="#" class="simple-text logo-normal">
-            {{ trans('panel.site_title') }}
-        </a>
+        <a href="/"><img height="50" src="{{ 'Https://pleco.io/Pleconew.png' }}"></a>
     </div>
 
     <!-- Sidebar Menu -->
@@ -20,7 +18,7 @@
                     </p>
                 </a>
             </li>
-    <!-- POSTS -->
+    <!-- LEADS -->
             <li class="nav-item">
                 <a href="{{ route("posts.index") }}" class="nav-link">
                     <p>
@@ -31,6 +29,16 @@
                     </p>
                 </a>
             </li>
+    <!-- BIDS -->
+            <li class="nav-item">
+                <a href="{{ route("bids.index") }}" class="nav-link">
+                    <p>
+                        <i class="fas fa-comment-dollar"></i>
+                        </i>
+                        <span>{{ trans('Bids') }}</span>
+                    </p>
+                </a>
+            </li>            
 
             @can('user_management_access')
                 <li class="nav-item has-treeview {{ request()->is('admin/permissions*') ? 'menu-open' : '' }} {{ request()->is('admin/roles*') ? 'menu-open' : '' }} {{ request()->is('admin/users*') ? 'menu-open' : '' }}">

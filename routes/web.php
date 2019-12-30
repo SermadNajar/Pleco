@@ -22,4 +22,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
 Route::resource('admin/posts', 'AdminPostsController'); // admin posts route
+Route::resource('bids', 'PostBidsController'); // comments route
+Route::get('/post/{id}', ['as'=>'home.post', 'uses'=>'AdminPostsController@post']);
 

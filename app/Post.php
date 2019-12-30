@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Bid;
 use App\User;
 use App\Photo;
 use App\Category;
@@ -30,5 +31,9 @@ class Post extends Model
 
     public function category(){
         return $this->belongsTo('App\Category');
+    }
+
+    public function bids(){
+        return $this->hasMany('App\Bid');
     }
 }

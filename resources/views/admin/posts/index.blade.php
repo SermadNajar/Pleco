@@ -34,6 +34,7 @@
                     <td>{{$post->price}}</td>
                     <td>{{$post->created_at->diffForhumans()}}</td>
                     <td>{{$post->updated_at->diffForhumans()}}</td>
+                    <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>
                 </tr>
                 @endforeach
                 @endif
